@@ -11,8 +11,16 @@ config_version=5
 [application]
 
 config/name="ZombieBot Game Jam"
+run/main_scene="uid://bhomrdeu7fhnr"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Art/icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://Art/": "blue",
+"res://Scenes/": "orange"
+}
 
 [physics]
 
