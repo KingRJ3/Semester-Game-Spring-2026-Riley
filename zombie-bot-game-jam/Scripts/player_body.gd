@@ -58,5 +58,4 @@ func _input(_event: InputEvent) -> void:
 		elif override_direction_input == "down":
 			claws_hitbox.rotation = PI/2
 			claws_hitbox.position = Vector2(0,23)
-		else:
-			claws_hitbox.position = Vector2(0,0)
+		
