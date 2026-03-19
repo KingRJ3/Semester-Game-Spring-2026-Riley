@@ -53,9 +53,9 @@ func _physics_process(delta: float) -> void:
 			change_sprite_2d_position(delta)
 		else:
 			if velocity.y != 0 and velocity.x != 0:
-				if abs(velocity.y) > abs(velocity.x):
+				if abs(velocity.y) < abs(velocity.x):
 					velocity.x = abs(velocity.y) * (velocity.x / velocity.x)
-				if abs(velocity.x) > abs(velocity.y):
+				if abs(velocity.x) < abs(velocity.y):
 					velocity.y = abs(velocity.x) * (velocity.y / velocity.y)
 				
 	else:
@@ -97,9 +97,12 @@ func _input(_event: InputEvent) -> void:
 	claws_hitbox.disabled = true
 	
 	if Input.is_action_pressed("space"):
-		return #prevents using claws while midair
+		return #prevents attacking while midair
 	
-	if Input.is_action_pressed("left-click"):
+	if Input.is_action_just_pressed("right-click"):
+		pass
+	
+	if Input.is_action_just_pressed("left-click"):
 		claws_hitbox.disabled = false
 		if override_direction_input == "right":
 			claws_hitbox.rotation = 0
